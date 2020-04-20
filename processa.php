@@ -59,7 +59,7 @@ $mensagem = "
  
 	
 </table>";
-$mail = new MailSender("automatico@megaplacasgoiania.com.br", "oscar.alencar@gmail.com", "Pedido feito pelo site", $mensagem, "Form Contato Site");
+$mail = new MailSender("automatico@megaplacasgoiania.com.br", "goianiamegaplacas@gmail.com", "Pedido feito pelo site", $mensagem, "Form Contato Site");
 $mail->sendMail($configs_username, $configs_password, $configs_host);
 echo "<meta http-equiv='refresh' content='0;URL=obrigado.php'> ";
 die;
