@@ -16,9 +16,9 @@ class MailSender {
     private $to;
     private $subject;
     private $messageHTML;
-    private $username;
+    private $fromName;
 
-    public function __construct($from, $to, $subject, $messageHTML)
+    public function __construct($from, $to, $subject, $messageHTML, $fromName)
     {
 
         if ($from == null || $to == null || $subject == null || $messageHTML == null) {
@@ -29,10 +29,11 @@ class MailSender {
         $this->to = $to;
         $this->subject = $subject;
         $this->messageHTML = utf8_decode($messageHTML);
+        $this->fromName = $fromName;
 
     }
 
-    public function sendMail($username, $password)
+    public function sendMail($username, $password, $host)
     {
         $mail = new PHPMailer(true);
 
@@ -40,7 +41,7 @@ class MailSender {
             //Server settings
             // $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
             $mail->isSMTP();                                            // Send using SMTP
-            $mail->Host       = 'email-ssl.com.br';         // Set the SMTP server to send through
+            $mail->Host       = $host;         // Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
             $mail->Username   = $username;                             // SMTP username
             $mail->Password   = $password;                            // SMTP password
@@ -48,7 +49,7 @@ class MailSender {
             $mail->Port       = 587;                                    // TCP port to connect to
 
             //Recipients
-            $mail->setFrom($this->getFrom(), 'Brasil Connecting Mailer');
+            $mail->setFrom($this->getFrom(), $this->getFromName());
             $mail->addAddress($this->getTo());     // Add a recipient
 
             // Content
@@ -82,6 +83,17 @@ class MailSender {
     public function getMessageHTML() {
         return $this->messageHTML;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getFromName()
+    {
+        return $this->fromName;
+    }
+
+
+
 
 
 
