@@ -2,16 +2,17 @@
 require __DIR__.'/configs.php';
 require __DIR__.'/classes/MailSender.php';
 
-error_reporting(true);
+error_reporting(false);
 header('Content-Type: text/html; charset=utf-8');
 $headers = "Content-type: text/html; charset=utf-8\r\n";
 
 // VARIÁVEIS PADRÃO
 $nome = $_POST['nome'];
 $email = $_POST['email'];
-$telefone = $_POST['nrPlaca'];
-$whatsapp = $_POST['chassis'];
-$mensagem = $_POST['cdBoletoDetran'];
+$telefone = $_POST['telefone'];
+$nrPlaca = $_POST['nrPlaca'];
+$chassis = $_POST['chassis'];
+$cdBoletoDetran = $_POST['cdBoletoDetran'];
 $mensagem = "
 <table >
 	<tr>
@@ -40,38 +41,26 @@ $mensagem = "
 
     <tr>
       <td style='border-bottom:1px solid #DDDDDD;'>
-          <strong>WhatsApp: </strong> $whatsapp
+          <strong>Chassis: </strong> $chassis
       </td>
-  </tr>
+    </tr>
     
-	<tr>
-    	<td style='border-bottom:1px solid #DDDDDD;'>
-      		<strong>Mensagem: </strong> $mensagem
-    	</td>
- 	</tr>
-	
- 	<tr>
-    	<td style='border-bottom:1px solid #DDDDDD;'>
-      		<strong>Tipo de Serviço: </strong> $tipo
-    	</td>
- 	</tr>
-
-  <tr>
+    <tr>
       <td style='border-bottom:1px solid #DDDDDD;'>
-          <strong>Quantidade de Contatos: </strong> $quantidade
+          <strong>Placa: </strong> $nrPlaca
       </td>
-  </tr>
-
-
- 	<tr>
-    	<td style='border-bottom:1px solid #DDDDDD;'>
-      		<strong>Tempo de Cada Chamada: </strong> $tempo
-    	</td>
- 	</tr>
-
+    </tr>
+        
+    <tr>
+      <td style='border-bottom:1px solid #DDDDDD;'>
+          <strong>Código Boleto Detran: </strong> $cdBoletoDetran
+      </td>
+    </tr>
+ 
+	
 </table>";
 $mail = new MailSender("automatico@megaplacasgoiania.com.br", "oscar.alencar@gmail.com", "Pedido feito pelo site", $mensagem, "Form Contato Site");
-$mail->sendMail($configs_username, $configs_password, $host);
+$mail->sendMail($configs_username, $configs_password, $configs_host);
 echo "<meta http-equiv='refresh' content='0;URL=obrigado.php'> ";
 die;
 

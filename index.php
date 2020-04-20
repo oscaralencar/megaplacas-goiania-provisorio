@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form by Colorlib</title>
+    <title>Megaplacas</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -27,19 +27,22 @@
                             <div class="col-xs-12"></div>
                         </div>
                         <div class="form-group">
-                            <input value="Oscar" type="text" required class="form-input" name="nome" id="nome" placeholder="Nome completo / Empresa *"/>
+                            <input value="" type="text" required class="form-input" name="nome" id="nome" placeholder="Nome completo / Empresa *"/>
                         </div>
                         <div class="form-group">
-                            <input value="oscar@gamil.com" type="email" required class="form-input" name="email" id="email" placeholder="Email *"/>
+                            <input value="" type="email" required class="form-input" name="email" id="email" placeholder="Email *"/>
                         </div>
                         <div class="form-group">
-                            <input value="numeroPLaca" type="text" required class="form-input" name="nrPlaca" id="nrPlaca" placeholder="Número da placa *"/>
+                            <input value="" type="text" required class="form-input" name="telefone" id="telefone" placeholder="Telefone com DDD *"/>
                         </div>
                         <div class="form-group">
-                            <input value="chassis" type="text" required class="form-input" name="chassis" id="chassis" placeholder="Chassis *"/>
+                            <input value="" type="text" required class="form-input" name="nrPlaca" id="nrPlaca" placeholder="Número da placa *"/>
                         </div>
                         <div class="form-group">
-                            <input value="codigo boleto" type="text" required class="form-input" name="cdBoletoDetran" id="cdBoletoDetran" placeholder="Código do Boleto do Detran *"/>
+                            <input value="" type="text" required class="form-input" name="chassis" id="chassis" placeholder="Chassis *"/>
+                        </div>
+                        <div class="form-group">
+                            <input value="" type="text" required class="form-input" name="cdBoletoDetran" id="cdBoletoDetran" placeholder="Código do Boleto do Detran *"/>
                         </div>
 
                         <div class="form-group">
