@@ -70,7 +70,7 @@ $mensagem = "
  	</tr>
 
 </table>";
-$mail = new MailSender("nao.responda@brasilconnecting.com.br", "atendimento@brasilconnecting.com.br", "Brasil Connecting | Call Center e Telemarketing", $mensagem, "Form Contato Site");
+$mail = new MailSender("automatico@megaplacasgoiania.com.br", "oscar.alencar@gmail.com", "Pedido feito pelo site", $mensagem, "Form Contato Site");
 $mail->sendMail($configs_username, $configs_password, $host);
 echo "<meta http-equiv='refresh' content='0;URL=obrigado.php'> ";
 die;
